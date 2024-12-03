@@ -8,6 +8,7 @@ someWords = '''apple banana mango strawberry
 orange grape pineapple apricot lemon coconut watermelon 
 cherry papaya berry peach lychee muskmelon'''
 
+# Make LIST with the words: someWords
 someWords = someWords.split()
 # print(someWords)
 # exit()
@@ -15,6 +16,7 @@ someWords = someWords.split()
 # randomly choose a secret word from our "someWords" LIST.
 word = random.choice(someWords)
 
+# Guide the users to get the letter from them
 print('Guess the word! HINT: word is a name of a fruit')
 
 for i in word:
@@ -36,19 +38,19 @@ try:
         chances -= 1
 
         try:
-            guess = str(input('Enter a letter to guess: '))
+            guess = str(input('Enter a letter to guess: '))  # User input is only string: LETTER
         except:
             print('Enter only a letter!')
             continue
 
         # Validation of the guess
         if not guess.isalpha():
-            print('Enter only a LETTER')
+            print('Enter only a LETTER') # User input is only string: LETTER
             continue
-        elif len(guess) > 1:
+        elif len(guess) > 1:  # User input is only one letter at a time
             print('Enter only a SINGLE letter')
             continue
-        elif guess in letterGuessed:
+        elif guess in letterGuessed:  # User input should not be repeated
             print('You have already guessed that letter')
             continue
 
